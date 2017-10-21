@@ -1,0 +1,129 @@
+
+$mainBg: #f4f4f4;
+
+body {
+  margin: 0;
+}
+
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: .5em;
+  box-sizing: border-box;
+  background: $mainBg;
+  & > *{
+    flex: 1 100%;
+    max-width: calc(50% - 1em);
+    height: calc(50vh - 1.5em);
+    margin: .5em;
+  }
+  .mat-input-element{
+    font-size: 1rem;
+  }
+  .mat-card{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .mat-card-title {
+    padding: 1em;
+  }
+  .mat-list .mat-list-option .mat-list-item-content-reverse, .mat-nav-list .mat-list-option .mat-list-item-content-reverse, .mat-selection-list .mat-list-option .mat-list-item-content-reverse {
+    padding: 0 24px;
+  }
+  .mat-list, .mat-nav-list, .mat-selection-list {
+    padding-top: 0;
+  }
+}
+
+.mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
+  background: #7986CB;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+.mat-pseudo-checkbox{
+  order: 1;
+}
+
+.mat-form-field-placeholder-wrapper {
+  display: none;
+}
+
+
+
+.mat-form-field-infix {
+  border-top: 0 solid transparent;
+}
+
+.mat-card-content>:last-child:not(.mat-card-footer),
+.mat-card>:last-child:not(.mat-card-footer) {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.mat-selection-list{
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.mat-form-field {
+  line-height: 1em;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 1.25em;
+  margin-top: -1.25em;
+}
+
+.mat-form-field-infix {
+  padding: .4375em 0 .2375em 0;
+}
+
+.mat-input-element {
+  color: white;
+}
+
+input.mat-input-element {
+  color: white;
+}
+
+.mat-list .mat-list-option, .mat-nav-list .mat-list-option, .mat-selection-list .mat-list-option {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.mat-form-field-underline {
+  background-color: white;
+}
+
+.mat-form-field-wrapper {
+  position: relative;
+  top: -.3em;
+}
+
+.main .mat-card-title {
+  padding: 1em;
+  height: 70px;
+  box-sizing: border-box;
+  margin-bottom: 0;
+}
+
+.mat-card-actions, .mat-card-content,
+.mat-card-subtitle, .mat-card-title {
+  margin-bottom: 0;
+}
+
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-placeholder,
+.mat-form-field-empty.mat-form-field-placeholder {
+  display: block;
+  font-size: 1rem;
+}
+

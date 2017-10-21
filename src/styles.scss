@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '/app/important-urgent-items/important-urgent-items.component.scss';
+@import '/app/important-no-urgent-items/important-no-urgent-items.component.scss';
+@import '/app/no-important-urgent-items/no-important-urgent-items.component.scss';
+@import '/app/no-important-no-urgent-items/no-important-no-urgent-items.component.scss';
+@import '/app/app.component.scss';
+
+

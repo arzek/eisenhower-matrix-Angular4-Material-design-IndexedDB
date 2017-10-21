@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./important-urgent-items.component.scss']
 })
 export class ImportantUrgentItemsComponent implements OnInit {
-
-  constructor() { }
-
+  constructor() {
+  }
   ngOnInit() {
   }
-
 }

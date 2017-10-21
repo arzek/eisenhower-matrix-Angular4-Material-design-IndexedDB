@@ -1,0 +1,12 @@
+// locals
+
+$baseGreen: #4CAF50;
+
+app-no-important-no-urgent-items{
+  .mat-card-title{
+    background: $baseGreen;
+  }
+  .mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
+    background: $baseGreen;
+  }
+}
