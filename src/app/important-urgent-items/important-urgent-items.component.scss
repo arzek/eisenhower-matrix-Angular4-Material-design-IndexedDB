@@ -9,4 +9,7 @@ app-important-urgent-items{
   .mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
     background: $baseRed;
   }
+  .mat-icon{
+    color: $baseRed;
+  }
 }
