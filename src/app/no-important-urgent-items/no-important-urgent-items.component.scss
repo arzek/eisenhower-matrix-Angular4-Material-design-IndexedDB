@@ -1,12 +1,19 @@
 // locals
 
 $baseBlue: #3F51B5;
+$baseBlueG: linear-gradient(75deg, #3F51B5, lighten(#3F51B5, 10%));
 
 app-no-important-urgent-items{
   .mat-card-title{
-    background: $baseBlue;
+    background: $baseBlueG;
   }
   .mat-accent .mat-pseudo-checkbox-checked, .mat-accent .mat-pseudo-checkbox-indeterminate, .mat-pseudo-checkbox-checked, .mat-pseudo-checkbox-indeterminate {
+    background: $baseBlue;
+  }
+  .mat-icon{
+    color: $baseBlue;
+  }
+  .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background{
     background: $baseBlue;
   }
 }

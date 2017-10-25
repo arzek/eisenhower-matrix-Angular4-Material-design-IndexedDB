@@ -10,7 +10,6 @@
 
   <mat-card-content>
     <mat-selection-list>
-
       <mat-list-item *ngFor="let item of items" [ngClass]="{item_close: item.status}" >
         <mat-checkbox (change)="changeItem(item.id)" [(ngModel)]="item.status"></mat-checkbox>
         {{ item.text }}
@@ -18,8 +17,6 @@
           <mat-icon aria-hidden="true"  (click)="deleteItem(item.id)" >clear</mat-icon>
         </button>
       </mat-list-item>
-
-
     </mat-selection-list>
   </mat-card-content>
 

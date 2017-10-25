@@ -1,21 +1,16 @@
-// mixin
+// fonts
 
-@mixin linear-gradient($direction, $color-stops...) {
-  @if is-direction($direction) == false {
-    $color-stops: $direction, $color-stops;
-    $direction: 180deg;
-  }
-  background: nth(nth($color-stops, 1), 1);
-  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
-  background: linear-gradient($direction, $color-stops);
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700');
+
 // globals
 
 $mainBg: #f4f4f4;
 $baseSpacing: 1.5rem;
 
 body {
+  font-family: 'Roboto', sans-serif;
   margin: 0;
+  background: $mainBg;
 }
 
 // main
@@ -27,12 +22,12 @@ body {
   justify-items: center;
   height: 100%;
   min-height: 100vh;
-  width: 100%;
+  width: 1200px;
+  margin: 0 auto;
   overflow: hidden;
-  padding: $baseSpacing / 2;
+  padding: $baseSpacing / 2 $baseSpacing / 2 100px $baseSpacing / 2;
   box-sizing: border-box;
   font-size: 14px;
-  background: $mainBg;
   & > *{
     flex: 1 100%;
     max-width: calc(50% - 1.5rem);
@@ -43,6 +38,7 @@ body {
     margin-bottom: $baseSpacing;
     padding: 0;
     color: #fff;
+    overflow: hidden;
   }
   .mat-card-title{
     padding: $baseSpacing / 2 $baseSpacing 0 $baseSpacing;
@@ -59,21 +55,64 @@ body {
   .mat-form-field-ripple {
     background-color: white;
   }
-  .mat-selection-list .mat-list-option .mat-list-item-content-reverse{
+  .mat-selection-list .mat-list-option .mat-list-item-content-reverse {
     padding: 0 $baseSpacing;
   }
-  .mat-form-field-placeholder-wrapper{
+  .mat-form-field-placeholder-wrapper {
     display: none;
   }
-  .mat-form-field-infix{
+  .mat-form-field-infix {
     border-top: 0;
   }
-  .mat-form-field{
+  .mat-form-field {
     top: 4px;
-    font-size: 16px;
+    font-size: 18px;
+  }
+  .mat-checkbox {
+    margin-right: $baseSpacing;
+  }
+  .mat-selection-list .mat-list-item .mat-list-item-content{
+    padding: 0 $baseSpacing * 3 0 $baseSpacing;
+    border-top: 1px solid $mainBg;
+    .mat-icon-button {
+      position: absolute;
+      right: $baseSpacing / 2;
+      top: 2px;
+      opacity: 0;
+      transition: opacity .1s ease-in-out;
+    }
+    &:hover{
+      .mat-icon-button{
+        opacity: 1;
+      }
+    }
+  }
+  .mat-list, .mat-nav-list, .mat-selection-list {
+    padding-top: 0;
+  }
+  .mat-selection-list {
+    padding: 0;
+    outline: none;
+  }
+  .mat-button-ripple,
+  .mat-checkbox-ripple{
+    display: none;
   }
 }
 
+.base-input{
+  border: 0;
+  color: rgba(0,0,0,.87);
+  font-size: 16px;
+  outline: 0;
+  box-shadow: 0 0 0;
+  display: block;
+  &:hover,
+  &:focus{
+    outline: 0;
+    box-shadow: 0 0 0;
+  }
+}
 
 .mat-selection-list{
   padding: 0 0 $baseSpacing 0;
@@ -83,16 +122,6 @@ body {
   width: 100%;
 }
 
-
-.mat-selection-list{
-
-}
-
-.mat-list-item-content{
-
-}
-
-
 .mat-list-text {
   .mat-icon-button {
     position: absolute;
@@ -101,9 +130,9 @@ body {
   }
 }
 
-
-.mat-list-text{
-
+.item_close{
+  text-decoration: line-through;
+  font-style: italic;
 }
 
 .mat-pseudo-checkbox{
@@ -113,14 +142,31 @@ body {
 // footer
 
 .footer{
+  box-sizing: border-box;
+  padding: $baseSpacing / 1.5 $baseSpacing;
+  background: white;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 16px;
+  outline: 0;
+  box-shadow: 0 0 0;
+  display: block;
+  font-weight: 400;
+  text-align: center;
+  line-height: 35px;
+  height: 100px;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+  p{
+    margin: 0;
+  }
+  a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.87);
+    font-weight: bold;
+  }
 }
 
-.item_close{
-  text-decoration: line-through;
-  font-style: italic;
-}
