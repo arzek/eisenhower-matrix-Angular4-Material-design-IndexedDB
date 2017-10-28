@@ -16,7 +16,6 @@ export class ImportantUrgentItemsComponent extends BaseComponent implements OnIn
   ngOnInit() {
     this.new_item = 'Important and urgent';
     this.initItem();
-
   }
 
 
