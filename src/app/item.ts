@@ -1,5 +1,6 @@
 export class Item {
   public id: number;
+  public edit: boolean;
   private _text: string;
   private _status: boolean;
 

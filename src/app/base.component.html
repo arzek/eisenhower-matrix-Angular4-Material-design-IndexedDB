@@ -7,24 +7,19 @@
       </mat-form-field>
     </form>
   </mat-card-title>
-
   <mat-card-content>
-    <mat-selection-list>
-      <!--<mat-list-item>-->
-      <!--<mat-checkbox></mat-checkbox>-->
-      <!--<input class="base-input" type="text" value="123">-->
-      <!--<button mat-icon-button color="accent">-->
-      <!--<mat-icon aria-hidden="true">clear</mat-icon>-->
-      <!--</button>-->
-      <!--</mat-list-item>-->
-      <mat-list-item *ngFor="let item of items" [ngClass]="{item_close: item.status}" >
+    <mat-list>
+      <mat-list-item *ngFor="let item of items" [ngClass]="{item_close: item.status}" (dblclick)="editItem(item.id)">
         <mat-checkbox (change)="changeItem(item.id)" [(ngModel)]="item.status"></mat-checkbox>
-        {{ item.text }}
+
+        <span *ngIf="!item.edit">{{ item.text }}</span>
+        <input *ngIf="item.edit" (blur)="saveItem(item.id)" (keyup.enter)="saveItem(item.id)" (keyup.escape)="cancelEditingItem(item.id)" class="base-input" type="text" [(ngModel)]="item.text">
+
         <button mat-icon-button color="accent">
           <mat-icon aria-hidden="true"  (click)="deleteItem(item.id)" >clear</mat-icon>
         </button>
       </mat-list-item>
-    </mat-selection-list>
+    </mat-list>
   </mat-card-content>
 
 </mat-card>

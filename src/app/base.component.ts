@@ -92,5 +92,50 @@ export class BaseComponent {
   setPlaceholderText(): void {
     this.new_item = this.name;
   }
+  editItem(id: number):void {
+    for (const item of this.items) {
+      if(item.id === id){
+        item.edit = true;
+      }
+    }
+  }
+  saveItem(id: number): void {
+
+    this.db.update(this.table_name, this.getItemById(id)).then(() => {
+      this.setEditStatusById(id,false);
+    }, (error) => {
+      console.log(error);
+    });
+  }
+
+  cancelEditingItem(id: number): void {
+    this.db.getByKey(this.table_name, id).then((item_of_db) => {
+      const item = new Item(item_of_db);
+
+      for(let i = 0; i < this.items.length; i++){
+        if(this.items[i].id === id){
+          this.items[i] = item;
+        }
+      }
+    }, (error) => {
+      console.log(error);
+    });
+  }
+
+  private setEditStatusById(id: number, value: boolean): void{
+    for (const item of this.items) {
+      if(item.id === id){
+        item.edit = value;
+      }
+    }
+  }
+  private getItemById(id: number): Item{
+    for (const item of this.items) {
+      if(item.id === id){
+        return item;
+      }
+    }
+  }
+
 
 }
