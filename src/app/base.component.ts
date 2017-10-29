@@ -3,8 +3,9 @@ import {Item} from "./item";
 import {AngularIndexedDB} from "angular2-indexeddb/angular2-indexeddb";
 
 export class BaseComponent {
-  protected items: Item[] = [];
-  protected new_item: any = '';
+  items: Item[] = [];
+  protected name: any = '';
+  new_item: any = '';
   protected table_name: any;
   protected db: AngularIndexedDB = null;
   protected db_name: any;
@@ -42,7 +43,7 @@ export class BaseComponent {
 
 
 
-  protected addItem (): void {
+  addItem (): void {
     if (this.new_item) {
 
       const item = new Item();
@@ -82,4 +83,14 @@ export class BaseComponent {
       console.log(error);
     });
   }
+
+  clearPlaceholderText(): void {
+    if (this.new_item === this.name)
+      this.new_item = '';
+
+  }
+  setPlaceholderText(): void {
+    this.new_item = this.name;
+  }
+
 }

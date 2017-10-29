@@ -1,0 +1,31 @@
+<mat-card>
+
+  <mat-card-title>
+    <form class="example-form" (submit)="addItem()">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Type text"  [(ngModel)]="new_item" name="new_item" (click)="clearPlaceholderText()" (blur)="setPlaceholderText()">
+      </mat-form-field>
+    </form>
+  </mat-card-title>
+
+  <mat-card-content>
+    <mat-selection-list>
+      <!--<mat-list-item>-->
+      <!--<mat-checkbox></mat-checkbox>-->
+      <!--<input class="base-input" type="text" value="123">-->
+      <!--<button mat-icon-button color="accent">-->
+      <!--<mat-icon aria-hidden="true">clear</mat-icon>-->
+      <!--</button>-->
+      <!--</mat-list-item>-->
+      <mat-list-item *ngFor="let item of items" [ngClass]="{item_close: item.status}" >
+        <mat-checkbox (change)="changeItem(item.id)" [(ngModel)]="item.status"></mat-checkbox>
+        {{ item.text }}
+        <button mat-icon-button color="accent">
+          <mat-icon aria-hidden="true"  (click)="deleteItem(item.id)" >clear</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-selection-list>
+  </mat-card-content>
+
+</mat-card>
+

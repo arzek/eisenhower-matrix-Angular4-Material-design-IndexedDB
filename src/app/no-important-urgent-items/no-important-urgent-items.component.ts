@@ -3,11 +3,11 @@ import {BaseComponent} from "../base.component";
 
 @Component({
   selector: 'app-no-important-urgent-items',
-  templateUrl: './no-important-urgent-items.component.html',
+  templateUrl: '../base.component.html',
   styleUrls: ['./no-important-urgent-items.component.scss']
 })
 export class NoImportantUrgentItemsComponent extends BaseComponent implements OnInit {
-
+  protected name: any = 'No important and urgent';
   protected table_name: any = 'no_important_urgent';
   protected db_name: any = 'no_important_urgent';
   constructor() {
@@ -15,7 +15,7 @@ export class NoImportantUrgentItemsComponent extends BaseComponent implements On
   }
 
   ngOnInit() {
-    this.new_item = ' No important and urgent';
+    this.new_item = this.name;
     this.initItem();
   }
 
